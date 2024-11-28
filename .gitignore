@@ -1,0 +1,23 @@
+# Node.js
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de configuração sensíveis
+.env
+
+# Arquivos de IDE/Editor
+.vscode/
+.idea/
+*.swp
+
+# Build/Distribuição (caso haja)
+build/
+dist/
+
+# Sistema de Operação
+.DS_Store
+Thumbs.db
