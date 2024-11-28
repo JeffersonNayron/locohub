@@ -46,7 +46,7 @@ const carregarPessoas = async () => {
 
 // Função para salvar as pessoas no servidor (backend)
 const salvarPessoas = async (pessoas) => {
-  await fetch('http://localhost:3000/api/pessoas', {
+  await fetch('https://locohub.onrender.com', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
