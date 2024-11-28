@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocomotiveHub</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    
+    <div class="logo-container">
+      <img src="images/Vale-logo-E7CEF7F5FD-seeklogo.com.png" alt="Logo Vale" class="logo">
+      <h4 >LocomotiveHub</h4>
+      
+    </div>
+   
+    <!-- Barra de navegação -->
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li class="chat_operacional"><a href="https://chat-recepcao-front.onrender.com/">Chat</a></li>  
+        <li><a href="sobre.html">Sobre</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  
+  
+
+  <!-- Container principal -->
+  <div class="container">    
+  
+    <div class="listadePessoas">
+      <h2>Maquinistas</h2>
+      <input type="text" id="nomePessoa" placeholder="Digite seu nome">
+<button id="adicionarPessoa">Adicionar Pessoa</button>
+<button id="resetarStatus">Reset</button>
+
+  <ul id="pessoaList"></ul>
+      
+      
+      <div class="listPessoas">
+        <ul id="pessoaList">
+          <!-- Lista de pessoas pré-cadastradas -->
+        </ul>
+      </div>
+    </div>
+    
+    <div class="categories">
+      <div id="x5">
+        <h3>Espaço X5</h3>
+      </div>
+      <div id="x6">
+        <h3>Espaço X6</h3>
+      </div>
+      <div id="vv">
+        <h3>Virador de Vagões</h3>
+      </div>
+      <div id="ctr">
+        <h3>CTR</h3>
+      </div>
+      <div id="pial">
+        <h3>PIAL</h3>
+      </div>
+      <div id="comp"><h3>Composição</h3></div>
+    </div>
+
+    <!-- Container do chat -->
+    
+
+    <div id="analysis">
+      <div class="ponto"></div>
+      <div id="analysisContainer"></div>
+      <h3>Atualizações</h3>
+      <p id="pendentes"> </p>
+      <p id="emRef"></p>
+      <p id="concluidos"></p>
+    </div>
+    
+
+     <!-- Painel administrativo -->
+<div id="adminPanel" style="display:none;">
+  <h2>Painel Administrativo</h2>
+  <button onclick="resetState()">Resetar Sistema</button>
+</div>
+
+
+
+ 
+  
+
+  </div>
+ 
+  <footer class="footer">
+   
+
+    <div class="footer-content">
+      <p>&copy; 2024 LocomotiveHub. Turma B.</p>
+      <ul class="footer-links">
+       
+       
+     
+      </ul>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
