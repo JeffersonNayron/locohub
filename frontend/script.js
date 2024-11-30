@@ -46,7 +46,7 @@ const carregarPessoas = async () => {
 
 // Função para salvar as pessoas no servidor (backend)
 const salvarPessoas = async (pessoas) => {
-  await fetch('https://locohub.onrender.com', {
+  await fetch('https://locomotivehub.onrender.com/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -97,10 +97,20 @@ const updatePessoaList = () => {
     // Criar dropdown para selecionar local
     const dropdown = document.createElement("select");
     dropdown.classList.add('dropdown');
-    dropdown.innerHTML = ` 
-      <option value="">Local</option>
-      ${categories.map(cat => `<option value="${cat}" ${pessoa.categoria === cat ? 'disabled' : ''}>${cat.toUpperCase()}</option>`).join('')}
-    `;
+    dropdown.innerHTML = dropdown.innerHTML =dropdown.innerHTML = `
+    <option value="">Local</option>
+    ${categories.map(cat => {
+      if (pessoa.categoria) {
+        // Se a pessoa já tem uma categoria, desabilita todas as opções
+        return `<option value="${cat}" disabled>${cat.toUpperCase()}</option>`;
+      } else {
+        // Se não, exibe as opções normalmente
+        return `<option value="${cat}" ${pessoa.categoria === cat ? 'disabled' : ''}>${cat.toUpperCase()}</option>`;
+      }
+    }).join('')}
+  `;
+  
+  
     dropdown.onchange = () => addPessoaToCategory(pessoa, dropdown.value, dropdown);
     listItem.appendChild(dropdown);
 
