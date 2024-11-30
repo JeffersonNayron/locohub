@@ -46,7 +46,7 @@ const carregarPessoas = async () => {
 
 // Função para salvar as pessoas no servidor (backend)
 const salvarPessoas = async (pessoas) => {
-  await fetch('https://locomotivehub.onrender.com/', {
+  await fetch('https://locomotivehub.onrender.com', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
