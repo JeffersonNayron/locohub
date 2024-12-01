@@ -3,19 +3,15 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-// Configuração do Express
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Configuração do CORS para permitir apenas o domínio do frontend
-const corsOptions = {
-  origin: 'https://locomotivehub.onrender.com',  // Link do seu frontend
-  methods: ['GET', 'POST'],  // Permitir métodos que você usa
-  allowedHeaders: ['Content-Type'],  // Permitir os cabeçalhos necessários
-};
+// Middleware para permitir CORS
+app.use(cors({
+  origin: '*', // Permite requisições de qualquer origem. Você pode substituir '*' por 'http://127.0.0.1:5501' para permitir apenas essa origem específica.
+}));
 
-app.use(cors(corsOptions));  // Aplica a configuração de CORS ao backend
-app.use(express.json());
+app.use(bodyParser.json());
 
 // Conectar ao MongoDB Atlas
 const URI = "mongodb+srv://nayron:Fiema2025@pessoasdb.1ge2p.mongodb.net/?retryWrites=true&w=majority&appName=PessoasDB";
@@ -49,11 +45,8 @@ app.get('/api/pessoas', async (req, res) => {
 app.post('/api/pessoas', async (req, res) => {
   try {
     const pessoasData = req.body;
-
-    // Limpa e insere ou atualiza os dados no MongoDB
     await Pessoa.deleteMany({});
     await Pessoa.insertMany(pessoasData);
-
     res.status(200).send('Pessoas atualizadas com sucesso');
   } catch (error) {
     res.status(500).send('Erro ao salvar pessoas');
