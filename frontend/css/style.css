@@ -165,6 +165,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     grid-area: pessoas; /* Atribuindo à área "pessoas" definida no grid */
     min-height: 550px;
+    border: solid red 2px;
 
   
   }
@@ -212,6 +213,7 @@
     margin: 7px;
     padding: 10px;
     font-weight: bolder;
+    border: solid  2px green;
 
   }
 
