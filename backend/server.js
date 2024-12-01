@@ -7,8 +7,14 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Middleware
-app.use(cors());
+// Configuração do CORS para permitir apenas o domínio do frontend
+const corsOptions = {
+  origin: 'https://locomotivehub.onrender.com',  // Link do seu frontend
+  methods: ['GET', 'POST'],  // Permitir métodos que você usa
+  allowedHeaders: ['Content-Type'],  // Permitir os cabeçalhos necessários
+};
+
+app.use(cors(corsOptions));  // Aplica a configuração de CORS ao backend
 app.use(express.json());
 
 // Conectar ao MongoDB Atlas
@@ -68,4 +74,3 @@ app.post('/api/reset', async (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
 });
-
